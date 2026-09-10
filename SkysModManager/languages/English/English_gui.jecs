@@ -1,0 +1,15 @@
+SkysModManagerMenu.Gui.Menu.Title : "Sky's Mod Manager"
+SkysModManagerMenu.Gui.ManageButton : "Manage"
+
+SkysModManagerMenu.Gui.Menu.EditButton.Hover : "toggle edit mode"
+
+SkysModManagerMenu.Gui.Menu.Add.Name : "Name"
+SkysModManagerMenu.Gui.Menu.Add.Origin : "Url"
+SkysModManagerMenu.Gui.Menu.Add.Start : "<align="center">Add Remote Repo</align>"
+
+SkysModManagerMenu.Gui.Menu.Repo.UpdateRepo : "Update"
+SkysModManagerMenu.Gui.Menu.Repo.NewFetchOnUpdate : "New updates found while trying to update, press again to confirm"
+SkysModManagerMenu.Gui.Menu.Repo.PullFailed : "Pull failed, check console for error, hold shift to force"
+
+
+SkysModManagerMenu.Gui.Menu.Recommended.Install : "Add"
