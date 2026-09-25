@@ -101,7 +101,9 @@ public static class RepoDataManager
     public static bool TrySetupPath(IModFiles files)
     {
         if (!string.IsNullOrWhiteSpace(RepoPath))
-            return true;
+            // If the path is set but the info file doesn't exist, someone probably is trying to hard reset the mod
+            if (File.Exists(ExistingRepoInfosPath))
+                return true;
 
         // This will handle if you set up the mod with the installation command.
         // If you somehow trigger this accidentally, that is not on me... (the conditions are unreasonably specific.)
