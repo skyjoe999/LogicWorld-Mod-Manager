@@ -9,6 +9,7 @@ using LogicUI.MenuParts;
 using LogicUI.MenuTypes.ConfigurableMenus;
 using LogicWorld;
 using LogicWorld.GameStates;
+using LogicWorld.SharedCode;
 using LogicWorld.UI.MainMenu.Modding;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -30,6 +31,8 @@ public class SkysModManager_ClientMod : ClientMod
             var modTask = (TaskGroup)modLoadType.GetField("Instance", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic).GetValue(null);
             typeof(TaskGroup).GetField("CurrentTaskIndex", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).SetValue(modTask, 1000);
         }
+        try { RepoDataManager.RunGitCommand(GameData.GameDataLocation, "version"); }
+        catch (System.ComponentModel.Win32Exception exc){throw new("Could not run git command", exc);}
 
         try { ErrorScreenButtonAdder.Setup(); }
         catch (Exception exc) { Logger.Exception(exc); }
