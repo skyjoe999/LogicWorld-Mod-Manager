@@ -1,4 +1,8 @@
 Note: This mod is still in development, but it should be able to update itself as I continue to update it.
+
+Additionally: changes are only saved if you press the edit button (better UI for this is planned, feel free to make a PR)
+
+For Linux users: steams runtime sandbox appears to break this mod (I do not know how to fix this, again, PRs welcome)
 ## Installation:
 
 First you're going to need to make sure you have git installed or install it (https://git-scm.com/).
