@@ -56,7 +56,7 @@ public class RepoData
                 continue;
 
             // Read the contents of the file
-            (output, success) = RunCommand("cat-file", "--textconv", $"head:{path}");
+            (output, success) = RunCommand("cat-file", "--textconv", $"HEAD:{path}");
             if (!success)
                 return Mods = null;
 
