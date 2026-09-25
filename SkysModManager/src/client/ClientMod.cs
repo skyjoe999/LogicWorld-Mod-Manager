@@ -31,6 +31,8 @@ public class SkysModManager_ClientMod : ClientMod
             var modTask = (TaskGroup)modLoadType.GetField("Instance", BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic).GetValue(null);
             typeof(TaskGroup).GetField("CurrentTaskIndex", BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic).SetValue(modTask, 1000);
         }
+
+        RepoDataManager.Logger = Logger;
         try { RepoDataManager.RunGitCommand(GameData.GameDataLocation, "version"); }
         catch (System.ComponentModel.Win32Exception exc){throw new("Could not run git command", exc);}
 
@@ -38,7 +40,6 @@ public class SkysModManager_ClientMod : ClientMod
         catch (Exception exc) { Logger.Exception(exc); }
 
         ModID = Manifest.ID;
-        RepoDataManager.Logger = Logger;
 
         SceneManager.sceneLoaded += (scene, b) =>
         {
